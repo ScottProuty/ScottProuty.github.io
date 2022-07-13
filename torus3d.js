@@ -1,7 +1,7 @@
 import './style.css'
 import * as THREE from 'three';
 
-// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 const scene = new THREE.Scene();
 
@@ -15,7 +15,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(30);
 
-// const controls = new OrbitControls(camera, renderer.domElement);
+const controls = new OrbitControls(camera, renderer.domElement);
 
 const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
 const material = new THREE.MeshStandardMaterial({color: 0xFFFFFF});
@@ -32,10 +32,10 @@ pointLight2.position.set(-15,-15,-15);
 const ambientlight = new THREE.AmbientLight( 0xffffff, 0.1 );
 scene.add(ambientlight, pointLight, pointLight2);
 
-const lightHelper = new THREE.PointLightHelper(pointLight);
-const lightHelper2 = new THREE.PointLightHelper(pointLight2);
-const gridHelper = new THREE.GridHelper(200,50);
-scene.add(lightHelper, lightHelper2, gridHelper);
+// const lightHelper = new THREE.PointLightHelper(pointLight);
+// const lightHelper2 = new THREE.PointLightHelper(pointLight2);
+// const gridHelper = new THREE.GridHelper(200,50);
+// scene.add(lightHelper, lightHelper2, gridHelper);
 
 
 function moveCamera()
@@ -57,11 +57,11 @@ document.body.onscroll = moveCamera;
 function animate(){
   requestAnimationFrame(animate);
 
-  // torus.rotation.x += 0.003;
-  // torus.rotation.y += 0.01;
-  // torus.rotation.z += 0.003;
+  torus.rotation.x += 0.003;
+  torus.rotation.y += 0.01;
+  torus.rotation.z += 0.003;
 
-  // controls.update();
+  controls.update();
 
   renderer.render(scene, camera);
 }

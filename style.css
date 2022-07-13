@@ -2,5 +2,37 @@ canvas{
   position: fixed;
   top: 0;
   left: 0;
-  
+}
+#header {
+  font-family: "Helvetica Neue", "sans-serif";
+  background-color: skyblue;
+}
+#titleDiv {
+  background-color: blueviolet;
+  padding-left: 20px;
+  width: 300px;
+  height: 110px;
+  float: left;
+}
+#middleHeader {
+  position: static;
+  height: 110px;
+}
+#buttonRow {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  column-rule: 1px solid black;
+  background: lightgray;
+}
+.sectionButton {
+  width: 200px;
+}
+#linkedInButton {
+
+  float: right;
+  height: 50px;
+}
+#LNimage {
+  width: 20px;
 }
