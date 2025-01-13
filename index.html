@@ -1,13 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SLP Portfolio</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="favicon.png" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <!-- can also link to the website itself for JQuery -->
   </head>
+
   <body>
-    <canvas id="bg"></canvas>
-    <script type="module" src="/main.js"></script>
+    <div id="header">
+      <div id="titleDiv">
+        <div id="nameDiv">
+          <h1>SCOTT <br />&nbsp;&nbsp;&nbsp; PROUTY</h1>
+        </div>
+      </div>
+      <div id="bioAndLinksContainer">
+        <div id="bioLine">
+          Software person, electrical engineer, multi-hobbyist
+        </div>
+        <div id="buttonRow">
+          <ul>
+            <li><a href="#gamesSection">Games</a></li>
+            <li><a href="#contactInfo">Projects</a></li>
+            <li><a href="#contactInfo">3D Art</a></li>
+            <li><a href="#contactInfo">Photos</a></li>
+            <li><a href="#contactInfo">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <div id="funSpace"></div>
+
+    <div id="cardHolder">
+      <h1 id="gamesSection">Games -----</h1>
+      <div class="card">
+        <h3>Unity: Platformer Example</h3>
+        <p class="cardDesc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Exceptercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum.
+        </p>
+        <div class="imageContainer">
+          <img src="Island3.png" />
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Unreal Engine: Warehouse Wreakage</h3>
+        <p class="cardDesc">
+          Fly around a detailed, handcrafted warehouse and try to cause as much
+          destruction as you can with your limited number of wrecking balls.
+          Adapted from the Unreal Engine 5 C++ Developer
+          <a
+            href="https://www.udemy.com/course/unrealcourse/?couponCode=ACCAGE0923"
+            >Course</a
+          >
+          by GameDev.tv.<br /><br />
+          Source available
+          <a href="https://github.com/ScottProuty/WreckingBalls">on GitHub</a>
+        </p>
+        <div class="imageContainer">
+          <video muted preload loop poster="Assets\WWThumbnail.png">
+            <source src="Assets\WarehouseWreckageClip.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Budget Tracker - Excel VBA Project</h3>
+        <p class="cardDesc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum.
+        </p>
+        <div class="imageContainer">
+          <img src="ram.jpg" />
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>BlockGraph</h3>
+        <p class="cardDesc">
+          BlockGraph is a Unity project which uses elements of Unity's Universal
+          Render Pipeline (URP) and ShaderGraph system for defining shaders. It
+          creates fun mathematical animated shapes with any number of blocks
+          which are colored by the shader code, based on their XYZ coordinates.
+          Effort was put into optimizing the render pipeline for minimum frame
+          render time. <br />Adapted from Jasper Flick's tutorial on
+          <a
+            href="https://catlikecoding.com/unity/tutorials/basics/mathematical-surfaces/"
+            >Catlike Coding</a
+          >.
+        </p>
+        <div class="imageContainer">
+          <video muted preload loop poster="Assets\BlockGraphThumbnail.png">
+            <source src="Assets\BlockGraphClip.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Unreal Engine: Warehouse Destruction</h3>
+        <p class="cardDesc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum.
+        </p>
+        <div class="imageContainer">
+          <img src="ram.jpg" />
+        </div>
+      </div>
+      <div class="card">
+        <h3>Unreal Engine: Warehouse Destruction</h3>
+        <p class="cardDesc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum.
+        </p>
+        <div class="imageContainer">
+          <img src="ram.jpg" />
+        </div>
+      </div>
+      <div class="card">
+        <h3>Unreal Engine: Warehouse Destruction</h3>
+        <p class="cardDesc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+          sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div class="imageContainer">
+          <img src="ram.jpg" />
+        </div>
+      </div>
+      <div id="contactInfo">
+        <p>
+          You can find me on
+          <a href="https://www.linkedin.com/in/scottlprouty/">LinkedIn</a> and
+          <a href="https://github.com/ScottProuty">GitHub</a>. Here's my
+          <a href="mailto:ProutyScottL@gmail.com">Email</a>.
+        </p>
+      </div>
+    </div>
   </body>
+  <script type="text/javascript" src="Script.js"></script>
 </html>
