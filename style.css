@@ -1,5 +1,6 @@
 html {
-  font-family: "Avenir Next","Avenir","Helvetica Neue", Helvetica, "sans-serif";
+  font-family: "Avenir Next", "Avenir", "Helvetica Neue", Helvetica,
+    "sans-serif";
   background-color: #0d1117;
   color: rgb(211, 211, 211);
   margin: 5px;
@@ -11,7 +12,7 @@ canvas {
   left: 0;
 }
 
-h3{
+h3 {
   font-size: 2em;
   margin: 0px 0px 40px 0px;
 }
@@ -35,13 +36,13 @@ h3{
   justify-content: center;
   align-items: center;
 }
-#nameDiv{
+#nameDiv {
   font-size: 2em;
 }
 #bioAndLinksContainer {
   display: flex;
   flex-direction: column;
-  gap:80px;
+  gap: 80px;
   align-items: flex-start;
 }
 #buttonRow {
@@ -63,20 +64,20 @@ h3{
   border-right: none;
 }
 #buttonRow a {
-  color:inherit;
+  color: inherit;
   text-decoration: none;
 }
 #buttonRow a:hover {
- filter:brightness(1.8);
- text-shadow: 0 0 18px lemonchiffon;
+  filter: brightness(1.8);
+  text-shadow: 0 0 18px lemonchiffon;
 }
 
-#bioLine{
+#bioLine {
   font-size: 1.4em;
   margin-left: 1em;
 }
 
-#funSpace{
+#funSpace {
   height: 40px;
 }
 
@@ -92,7 +93,7 @@ h3{
   color: lemonchiffon;
   text-shadow: 0 0 20px lemonchiffon;
 }
-.card{
+.card {
   background-color: rgb(42, 46, 48);
   border-radius: 40px;
   padding: 50px;
@@ -108,7 +109,13 @@ h3{
   color: beige;
 }
 
-.imageContainer{
+.workDesc {
+  width: 70%;
+  font-size: 1.2em;
+  margin-block-end: 0px;
+}
+
+.imageContainer {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -117,7 +124,8 @@ h3{
   height: 100%;
   border-radius: 30px;
 }
-.imageContainer img, video{
+.imageContainer img,
+video {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -131,13 +139,13 @@ h3{
   font-size: 1.5em;
   margin-left: 22px;
 }
-#contactInfo a{
+#contactInfo a {
   display: inline-block;
   text-decoration: underline;
   color: beige;
 }
 
-.animate{
+.animate {
   animation: upDown 0.7s ease-out forwards;
 }
 
@@ -153,7 +161,7 @@ h3{
   }
 }
 #contactInfo a:nth-child(1) {
-  animation-delay: .4s;
+  animation-delay: 0.4s;
 }
 #contactInfo a:nth-child(2) {
   animation-delay: 0.7s;
