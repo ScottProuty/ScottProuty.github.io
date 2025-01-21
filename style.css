@@ -3,18 +3,29 @@ html {
     "sans-serif";
   background-color: #0d1117;
   color: rgb(211, 211, 211);
-  margin: 5px;
+  margin: 15px;
+  --smallestCardSize: 380px;
 }
-
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 canvas {
   position: fixed;
   top: 0;
   left: 0;
 }
-
+h2 {
+  font-size: 1.7em;
+  font-style: italic;
+}
 h3 {
   font-size: 2em;
   margin: 0px 0px 40px 0px;
+}
+a {
+  color: beige;
 }
 
 #header {
@@ -23,6 +34,7 @@ h3 {
   background-color: rgb(37, 36, 39);
   border-radius: 40px;
   gap: 20px;
+  width: clamp(var(--smallestCardSize), 100%, 1250px);
 }
 
 #titleDiv {
@@ -38,6 +50,9 @@ h3 {
 }
 #nameDiv {
   font-size: 2em;
+  white-space: nowrap;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 #bioAndLinksContainer {
   display: flex;
@@ -68,7 +83,7 @@ h3 {
   text-decoration: none;
 }
 #buttonRow a:hover {
-  filter: brightness(1.8);
+  filter: brightness(1.1);
   text-shadow: 0 0 18px lemonchiffon;
 }
 
@@ -85,6 +100,7 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: clamp(var(--smallestCardSize), 100%, 1250px);
 }
 #cardHolder h1 {
   font-size: 2.5em;
@@ -93,47 +109,95 @@ h3 {
   color: lemonchiffon;
   text-shadow: 0 0 20px lemonchiffon;
 }
+
 .card {
+  display: flex;
+  gap: 100px;
   background-color: rgb(42, 46, 48);
   border-radius: 40px;
   padding: 50px;
-  position: relative;
 }
+.cardSet {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+.cardSet .card:first-child {
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+.cardSet .card {
+  margin-top: -26px;
+  border-radius: 0px;
+}
+.cardSet .card:last-child {
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  margin-top: -26px;
+}
+.jobAndCompany {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
 
+  padding-right: 10px;
+  margin-top: -50px;
+  margin-bottom: -50px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+.cardSet .card:first-child .jobAndCompany {
+  justify-content: flex-start;
+  border-top-right-radius: 40px;
+}
+.cardSet .card .jobAndCompany {
+  justify-content: center;
+  border-right: darkgoldenrod dashed;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.cardSet .card:last-child .jobAndCompany {
+  border-bottom-right-radius: 40px;
+}
+.jobAndCompany p {
+  position: relative;
+  margin-left: auto;
+  padding-right: 20px;
+  color: goldenrod;
+  font-size: small;
+}
+.workLink {
+  font-size: 2.5em;
+  font-weight: bold;
+}
 .cardDesc {
   font-size: 1.2em;
   margin-block-end: 0px;
-  width: 55%;
-}
-.cardDesc a {
-  color: beige;
 }
 
 .workDesc {
   width: 70%;
+  flex: 2;
   font-size: 1.2em;
-  margin-block-end: 0px;
 }
-
+.projectDesc {
+  flex: 1.7;
+}
 .imageContainer {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  flex: 1;
   right: 23px;
-  width: 40%;
-  height: 100%;
-  border-radius: 30px;
 }
 .imageContainer img,
-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.imageContainer video {
   max-width: 100%;
   max-height: 100%;
+  height: auto;
 }
-
+#hide {
+  display: none;
+}
 #contactInfo {
   display: inline-block;
   font-size: 1.5em;
@@ -142,7 +206,6 @@ video {
 #contactInfo a {
   display: inline-block;
   text-decoration: underline;
-  color: beige;
 }
 
 .animate {
@@ -168,4 +231,32 @@ video {
 }
 #contactInfo a:nth-child(3) {
   animation-delay: 1s;
+}
+
+@media screen and (max-width: 830px) {
+  #header {
+    flex-direction: column;
+    align-items: center;
+  }
+  #bioAndLinksContainer {
+    align-items: center;
+  }
+  .card {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+  .jobAndCompany {
+    margin-top: -20px;
+  }
+  .cardSet .card:first-child .jobAndCompany,
+  .cardSet .card .jobAndCompany,
+  .cardSet .card:last-child .jobAndCompany {
+    border-right: none;
+  }
+  .jobAndCompany p {
+    display: none;
+  }
+  .workDesc {
+    width: 100%;
+  }
 }
