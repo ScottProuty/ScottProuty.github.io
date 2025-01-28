@@ -185,6 +185,14 @@ a {
 .projectDesc {
   flex: 1.7;
 }
+
+.tag {
+  display: inline;
+  line-height: 1.8;
+  white-space: nowrap;
+  border-radius: 4px;
+  padding: 2px;
+}
 .imageContainer {
   flex: 1;
   right: 23px;
