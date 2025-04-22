@@ -112,7 +112,7 @@ a {
 
 .card {
   display: flex;
-  gap: 100px;
+  gap: 40px;
   background-color: rgb(42, 46, 48);
   border-radius: 40px;
   padding: 50px;
