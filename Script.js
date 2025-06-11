@@ -22,6 +22,13 @@ videos.forEach((video) => {
 });
 
 const animatedLinks = document.querySelectorAll("#contactInfo a");
+const slider = document.querySelector("#cardHolder");
+let currentSlide = 0;
+
+function goToSlide(slide) {
+  currentSlide = slide;
+  slider.style.transform = `translateX(-${slide * 100}vw)`;
+}
 
 const observerOptions = {
   threshold: 1.0,
