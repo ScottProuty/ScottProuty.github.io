@@ -21,14 +21,25 @@ videos.forEach((video) => {
   });
 });
 
+// Nav bar slider behavior
+function goToSlide(slide) {
+  currentSlide = slide;
+  slider.style.transform = `translateX(-${slide * 95}vw)`;
+}
+
+// Add footer template to bottom of each sliding section
+const footerTemplate = document.getElementById("footerTemplate");
+const cardSections = document.querySelectorAll(".cardSlider");
+
+cardSections.forEach((section) => {
+  const footerClone = footerTemplate.content.cloneNode(true);
+  section.appendChild(footerClone);
+});
+
+// Animate footer links
 const animatedLinks = document.querySelectorAll("#contactInfo a");
 const slider = document.querySelector("#cardHolder");
 let currentSlide = 0;
-
-function goToSlide(slide) {
-  currentSlide = slide;
-  slider.style.transform = `translateX(-${slide * 100}vw)`;
-}
 
 const observerOptions = {
   threshold: 1.0,
