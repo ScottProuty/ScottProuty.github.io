@@ -3,13 +3,13 @@ html {
     "sans-serif";
   background-color: #0d1117;
   color: rgb(211, 211, 211);
-  margin: 15px;
+  margin: 25px;
   --smallestCardSize: 380px;
 }
 body {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: 0;
 }
 canvas {
   position: fixed;
@@ -72,17 +72,24 @@ a {
   float: left;
   padding: 0px 20px 0px 20px;
   list-style: none;
-  font-weight: bold;
   border-right: 1px solid rgb(99, 99, 99);
 }
 #buttonRow li:last-child {
   border-right: none;
 }
-#buttonRow a {
+#buttonRow a,
+button {
   color: inherit;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: bold;
 }
-#buttonRow a:hover {
+#buttonRow a:hover,
+button:hover {
   filter: brightness(1.1);
   text-shadow: 0 0 18px lemonchiffon;
 }
@@ -98,9 +105,11 @@ a {
 
 #cardHolder {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 30px;
-  width: clamp(var(--smallestCardSize), 100%, 1250px);
+  overflow: hidden;
+  width: 200%;
+  transition: transform 0.5s ease-in-out;
 }
 #cardHolder h1 {
   font-size: 2.5em;
@@ -109,7 +118,13 @@ a {
   color: lemonchiffon;
   text-shadow: 0 0 20px lemonchiffon;
 }
-
+.cardSlider {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: clamp(var(--smallestCardSize), 200vw, 5000px);
+  width: 100%;
+}
 .card {
   display: flex;
   gap: 40px;
@@ -203,9 +218,10 @@ a {
   max-height: 100%;
   height: auto;
 }
-#hide {
+.hide {
   display: none;
 }
+
 #contactInfo {
   display: inline-block;
   font-size: 1.5em;

@@ -21,6 +21,24 @@ videos.forEach((video) => {
   });
 });
 
+const slider = document.querySelector("#cardHolder");
+const footerTemplate = document.getElementById("footerTemplate");
+const cardSections = document.querySelectorAll(".cardSlider");
+let currentSlide = 0;
+
+// Nav bar slider behavior
+function goToSlide(slide) {
+  currentSlide = slide;
+  slider.style.transform = `translateX(-${slide * 95}vw)`;
+}
+
+// Add footer template to bottom of each sliding section
+cardSections.forEach((section) => {
+  const footerClone = footerTemplate.content.cloneNode(true);
+  section.appendChild(footerClone);
+});
+
+// Animate footer links
 const animatedLinks = document.querySelectorAll("#contactInfo a");
 
 const observerOptions = {
