@@ -30,11 +30,6 @@ let currentSlide = 0;
 function goToSlide(slide) {
   currentSlide = slide;
   slider.style.transform = `translateX(-${slide * 95}vw)`;
-  if (slide == 0) {
-    document.getElementById("projectsSlide").classList.add("hide");
-  } else {
-    document.getElementById("projectsSlide").classList.remove("hide");
-  }
 }
 
 // Add footer template to bottom of each sliding section
