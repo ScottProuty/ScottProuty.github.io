@@ -24,12 +24,11 @@ videos.forEach((video) => {
 const slider = document.querySelector("#cardHolder");
 const footerTemplate = document.getElementById("footerTemplate");
 const cardSections = document.querySelectorAll(".cardSlider");
-let currentSlide = 0;
 
 // Nav bar slider behavior
 function goToSlide(slide) {
-  currentSlide = slide;
-  slider.style.transform = `translateX(-${slide * 95}vw)`;
+  const cardWidth = cardSections[1].offsetWidth; // The [1] is arbitrary, they're all the same width
+  slider.style.transform = `translateX(-${slide * (cardWidth + 30)}px)`;
 }
 
 // Add footer template to bottom of each sliding section
