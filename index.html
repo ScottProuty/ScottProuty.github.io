@@ -25,6 +25,7 @@
           <ul>
             <li><button onclick="goToSlide(0)">Work</button></li>
             <li><button onclick="goToSlide(1)">Projects</button></li>
+            <li><button onclick="goToSlide(2)">3D Models</button></li>
             <li><a href="#contactInfo">Contact</a></li>
           </ul>
         </nav>
@@ -473,8 +474,43 @@
             </video>
           </div>
         </div>
-      </div>
-    </div>
+      </div> <!-- ProjectsSlide  -->
+
+      <div id="3dModelsSlide" class="cardSlider">
+        <h1 id="projectsSection">3D Models ———</h1>
+
+        <div class="card">
+          <div class="projectDesc">
+            <h3>A Selection of My 3D Models</h3>
+            <div class="cardDesc">
+              <p>
+                Sometimes the best way to relax is to sit back, put on some 
+                music, and open up Blender. I'll post some of my models here. 
+                Please feel free to use them in your projects if you'd like.
+              </p>
+              <div id=3dModelsGrid class=showcaseGrid>
+                <div>
+                <model-viewer src="Assets\Models\Pencil.glb" alt="Mechanical Pencil" auto-rotate camera-controls style="width: 100%; height: 500px;"> </model-viewer>
+                Mechanical Pencil
+              </div>
+                <div>
+                  <model-viewer src="Assets\Models\Phone.glb" alt="A Phone" auto-rotate camera-controls style="width: 100%; height: 500px;"> </model-viewer>
+                No phone in particular
+              </div>
+                <div>
+                  <model-viewer src="Assets\Models\Monitor.glb" alt="A Computer Monitor" auto-rotate camera-controls style="width: 100%; height: 500px;"> </model-viewer>
+                A monitor
+              </div>
+                <div>model 4</div>
+                <div>model 5</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div> <!-- 3dModelsSlide  -->
+
+    </div> <!-- CardHolder  -->
     <template id="footerTemplate">
       <div id="contactInfo">
         <p>
@@ -487,4 +523,5 @@
     </template>
   </body>
   <script type="text/javascript" src="Script.js"></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.2.0/model-viewer.min.js"></script>
 </html>
