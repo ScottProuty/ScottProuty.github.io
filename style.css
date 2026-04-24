@@ -5,6 +5,7 @@ html {
   color: rgb(211, 211, 211);
   margin: 25px;
   --smallestCardSize: 380px;
+  --numberOfSections: 3;
 }
 body {
   display: flex;
@@ -106,10 +107,11 @@ button:hover {
 #cardHolder {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
   gap: 30px;
   overflow: hidden;
-  width: 200%;
-  transition: transform 0.5s ease-in-out;
+  width: calc(100vw * var(--numberOfSections));
+  transition: transform 0.5s ease-in-out, height 0.5s ease-in-out;
 }
 #cardHolder h1 {
   font-size: 2.5em;
@@ -122,8 +124,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: clamp(var(--smallestCardSize), 200vw, 5000px);
-  width: 100%;
+  width: clamp(var(--smallestCardSize), calc(100vw - 65px), 500vw);
 }
 .card {
   display: flex;
@@ -218,8 +219,99 @@ button:hover {
   max-height: 100%;
   height: auto;
 }
+
+.showcaseGrid {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+  gap: 20px;
+}
+.showcaseGrid div {
+  background-color: darkgray;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 20px;
+  color: Black;
+  text-align: center;
+  border-radius: 20px;
+}
+
+model-viewer {
+  border-bottom:1px solid black;
+}
+
 .hide {
   display: none;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.open {
+  display: flex;
+}
+.modal-box {
+  background: rgb(42, 46, 48);
+  border-radius: 40px;
+  padding: 40px 50px;
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+  font-size: 1.5em;
+}
+#modalClose {
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  font-size: 1.4em;
+  line-height: 1;
+  padding: 4px 10px;
+}
+
+.renderItem {
+  cursor: pointer;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.renderItem img {
+  max-width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: opacity 0.15s;
+}
+.renderItem:hover img {
+  opacity: 0.8;
+}
+
+.lightbox-box {
+  position: relative;
+  max-width: min(90vw, 1200px);
+  max-height: 90vh;
+}
+.lightbox-box img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 20px;
+  display: block;
+  object-fit: contain;
+}
+#lightboxClose {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  font-size: 1.4em;
+  line-height: 1;
+  padding: 4px 12px;
 }
 
 #contactInfo {
@@ -282,5 +374,8 @@ button:hover {
   }
   .workDesc {
     width: 100%;
+  }
+  .showcaseGrid {
+  grid-template-columns: auto;
   }
 }

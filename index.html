@@ -25,7 +25,8 @@
           <ul>
             <li><button onclick="goToSlide(0)">Work</button></li>
             <li><button onclick="goToSlide(1)">Projects</button></li>
-            <li><a href="#contactInfo">Contact</a></li>
+            <li><button onclick="goToSlide(2)">3D Models</button></li>
+            <li><button onclick="openContact()">Contact</button></li>
           </ul>
         </nav>
       </div>
@@ -473,8 +474,85 @@
             </video>
           </div>
         </div>
+      </div> <!-- ProjectsSlide  -->
+
+      <div id="3dModelsSlide" class="cardSlider">
+        <h1 id="projectsSection">3D Models ———</h1>
+        <div class="card">
+          <div class="projectDesc">
+            <h3>Renders</h3>
+            <div class="cardDesc">
+              <p>
+                Some rendered scenes made in Blender. Click any image to enlarge it.
+              </p>
+              <div class="rendersGrid showcaseGrid">
+                <div class="renderItem">
+                  <img src="Assets/Renders/WhiskeyGlass01.png" alt="Render 1" />
+                  <span>A rocks glass</span>
+                </div>
+                <div class="renderItem">
+                  <img src="Assets/Renders/Pencil02.png" alt="Render 2" />
+                  <span>A mechanical pencil I had on my desk</span>
+                </div>
+                <div class="renderItem">
+                  <img src="Assets/Renders/Chapstick01.png" alt="Render 3" />
+                  <span>Chapstick</span>
+                </div>
+                <div class="renderItem">
+                  <img src="Assets/Renders/WineGlassCausticLux.png" alt="Render 4" />
+                  <span>A wine glass under a spotlight, to show off some caustics</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="projectDesc">
+            <h3>A Selection of My 3D Models</h3>
+            <div class="cardDesc">
+              <p>
+                I like the challenge of creating a 3D model of simple solidbody objects. Here are a few I've made. 
+                Click and drag to orbit the model.
+              </p>
+              <div id=3dModelsGrid class=showcaseGrid>
+                <div>
+                <model-viewer src="Assets\Models\Pencil.glb" alt="Mechanical Pencil" auto-rotate camera-controls style="width: 100%; height: 500px;"> </model-viewer>
+                Mechanical Pencil
+              </div>
+                <div>
+                  <model-viewer src="Assets\Models\Phone.glb" alt="A Phone" auto-rotate camera-controls style="width: 100%; height: 500px;"> </model-viewer>
+                No phone in particular
+              </div>
+                <div>
+                  <model-viewer src="Assets\Models\Monitor.glb" alt="A Computer Monitor" auto-rotate camera-controls style="width: 100%; height: 500px;"> </model-viewer>
+                A monitor
+              </div>
+                <div>
+                  <model-viewer src="Assets\Models\FlashDrive.glb" alt="A Small Flash Drive" auto-rotate camera-controls style="width: 100%; height: 500px;"> </model-viewer>
+                A small USB drive
+              </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div> <!-- 3dModelsSlide  -->
+
+    </div> <!-- CardHolder  -->
+    <div id="lightbox" class="modal-overlay" aria-modal="true" role="dialog">
+      <div class="lightbox-box">
+        <button id="lightboxClose" aria-label="Close">&times;</button>
+        <img id="lightboxImg" src="" alt="" />
       </div>
     </div>
+
+    <div id="contactModal" class="modal-overlay" aria-modal="true" role="dialog">
+      <div class="modal-box">
+        <button id="modalClose" aria-label="Close">&times;</button>
+        <p>You can find me on <a href="https://www.linkedin.com/in/scottlprouty/">LinkedIn</a> and <a href="https://github.com/ScottProuty">GitHub</a>. Here's my <a href="mailto:ProutyScottL@gmail.com">Email</a>.</p>
+      </div>
+    </div>
+
     <template id="footerTemplate">
       <div id="contactInfo">
         <p>
@@ -487,4 +565,5 @@
     </template>
   </body>
   <script type="text/javascript" src="Script.js"></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.2.0/model-viewer.min.js"></script>
 </html>

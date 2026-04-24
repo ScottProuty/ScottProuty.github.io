@@ -24,12 +24,15 @@ videos.forEach((video) => {
 const slider = document.querySelector("#cardHolder");
 const footerTemplate = document.getElementById("footerTemplate");
 const cardSections = document.querySelectorAll(".cardSlider");
+
 let currentSlide = 0;
 
 // Nav bar slider behavior
 function goToSlide(slide) {
   currentSlide = slide;
-  slider.style.transform = `translateX(-${slide * 95}vw)`;
+  const cardWidth = cardSections[1].offsetWidth; // The [1] is arbitrary, they're all the same width
+  slider.style.transform = `translateX(-${slide * (cardWidth + 30)}px)`;
+  slider.style.height = cardSections[slide].scrollHeight + "px";
 }
 
 // Add footer template to bottom of each sliding section
@@ -96,4 +99,50 @@ coloredTags.forEach((tag, index) => {
   tag.style.backgroundColor = style.background;
   tag.style.border = style.border;
   tag.style.color = style.color;
+});
+
+// Set initial height and update on resize
+slider.style.height = cardSections[0].scrollHeight + "px";
+window.addEventListener("resize", () => goToSlide(currentSlide));
+
+// Contact modal
+const contactModal = document.getElementById("contactModal");
+
+function openContact() {
+  contactModal.classList.add("open");
+}
+
+document.getElementById("modalClose").addEventListener("click", () => {
+  contactModal.classList.remove("open");
+});
+
+contactModal.addEventListener("click", (e) => {
+  if (e.target === contactModal) contactModal.classList.remove("open");
+});
+
+// Lightbox for renders
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+
+document.querySelectorAll(".renderItem img").forEach((img) => {
+  img.addEventListener("click", () => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add("open");
+  });
+});
+
+document.getElementById("lightboxClose").addEventListener("click", () => {
+  lightbox.classList.remove("open");
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) lightbox.classList.remove("open");
+});
+
+// Close any open modal on Escape
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    document.querySelectorAll(".modal-overlay.open").forEach((m) => m.classList.remove("open"));
+  }
 });
