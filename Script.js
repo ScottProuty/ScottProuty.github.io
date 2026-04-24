@@ -25,10 +25,14 @@ const slider = document.querySelector("#cardHolder");
 const footerTemplate = document.getElementById("footerTemplate");
 const cardSections = document.querySelectorAll(".cardSlider");
 
+let currentSlide = 0;
+
 // Nav bar slider behavior
 function goToSlide(slide) {
+  currentSlide = slide;
   const cardWidth = cardSections[1].offsetWidth; // The [1] is arbitrary, they're all the same width
   slider.style.transform = `translateX(-${slide * (cardWidth + 30)}px)`;
+  slider.style.height = cardSections[slide].scrollHeight + "px";
 }
 
 // Add footer template to bottom of each sliding section
@@ -96,3 +100,7 @@ coloredTags.forEach((tag, index) => {
   tag.style.border = style.border;
   tag.style.color = style.color;
 });
+
+// Set initial height and update on resize
+slider.style.height = cardSections[0].scrollHeight + "px";
+window.addEventListener("resize", () => goToSlide(currentSlide));

@@ -107,10 +107,11 @@ button:hover {
 #cardHolder {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
   gap: 30px;
   overflow: hidden;
   width: calc(100vw * var(--numberOfSections));
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, height 0.5s ease-in-out;
 }
 #cardHolder h1 {
   font-size: 2.5em;
