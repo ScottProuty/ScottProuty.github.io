@@ -146,3 +146,13 @@ document.addEventListener("keydown", (e) => {
     document.querySelectorAll(".modal-overlay.open").forEach((m) => m.classList.remove("open"));
   }
 });
+
+// Sticky nav: show when header scrolls out of view
+const stickyNav = document.getElementById("stickyNav");
+const stickyObserver = new IntersectionObserver(
+  ([entry]) => {
+    stickyNav.classList.toggle("visible", !entry.isIntersecting);
+  },
+  { threshold: 0 }
+);
+stickyObserver.observe(document.getElementById("header"));

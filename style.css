@@ -4,6 +4,7 @@ html {
   background-color: #0d1117;
   color: rgb(211, 211, 211);
   margin: 25px;
+  overflow-x: hidden;
   --smallestCardSize: 380px;
   --numberOfSections: 3;
 }
@@ -72,11 +73,20 @@ a {
 #buttonRow li {
   float: left;
   padding: 0px 20px 0px 20px;
+  margin-top:3px;
   list-style: none;
-  border-right: 1px solid rgb(99, 99, 99);
+  border-left: 1px solid rgb(99, 99, 99);
+}
+#buttonRow li:first-child {
+  border-left:none;
 }
 #buttonRow li:last-child {
-  border-right: none;
+  border: outset; 1px;
+  border-radius: 15px;
+  border-color:orange;
+  color:darkorange;
+  margin-left: 20px;
+  margin-top:0px;
 }
 #buttonRow a,
 button {
@@ -203,11 +213,12 @@ button:hover {
 }
 
 .tag {
-  display: inline;
+  display: inline-block;
   line-height: 1.8;
   white-space: nowrap;
   border-radius: 4px;
-  padding: 2px;
+  padding: 2px 6px;
+  margin: 0 5px 5px 0;
 }
 .imageContainer {
   flex: 1;
@@ -349,7 +360,46 @@ model-viewer {
   animation-delay: 1s;
 }
 
+#stickyNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: rgb(37, 36, 39);
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+#stickyNav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+#stickyNav li {
+  padding: 0 20px;
+  list-style: none;
+  border-right: 1px solid rgb(99, 99, 99);
+}
+#stickyNav li:last-child {
+  border-right: none;
+}
+#stickyNav.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 @media screen and (max-width: 830px) {
+  html {
+    margin: 10px;
+    --smallestCardSize: 300px;
+  }
+  .cardSlider {
+    width: clamp(var(--smallestCardSize), calc(100vw - 20px), 500vw);
+  }
   #header {
     flex-direction: column;
     align-items: center;
