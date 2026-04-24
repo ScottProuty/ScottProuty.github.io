@@ -244,6 +244,76 @@ model-viewer {
   display: none;
 }
 
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.open {
+  display: flex;
+}
+.modal-box {
+  background: rgb(42, 46, 48);
+  border-radius: 40px;
+  padding: 40px 50px;
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+  font-size: 1.5em;
+}
+#modalClose {
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  font-size: 1.4em;
+  line-height: 1;
+  padding: 4px 10px;
+}
+
+.renderItem {
+  cursor: pointer;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.renderItem img {
+  max-width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: opacity 0.15s;
+}
+.renderItem:hover img {
+  opacity: 0.8;
+}
+
+.lightbox-box {
+  position: relative;
+  max-width: min(90vw, 1200px);
+  max-height: 90vh;
+}
+.lightbox-box img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 20px;
+  display: block;
+  object-fit: contain;
+}
+#lightboxClose {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  font-size: 1.4em;
+  line-height: 1;
+  padding: 4px 12px;
+}
+
 #contactInfo {
   display: inline-block;
   font-size: 1.5em;

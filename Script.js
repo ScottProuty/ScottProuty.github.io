@@ -104,3 +104,45 @@ coloredTags.forEach((tag, index) => {
 // Set initial height and update on resize
 slider.style.height = cardSections[0].scrollHeight + "px";
 window.addEventListener("resize", () => goToSlide(currentSlide));
+
+// Contact modal
+const contactModal = document.getElementById("contactModal");
+
+function openContact() {
+  contactModal.classList.add("open");
+}
+
+document.getElementById("modalClose").addEventListener("click", () => {
+  contactModal.classList.remove("open");
+});
+
+contactModal.addEventListener("click", (e) => {
+  if (e.target === contactModal) contactModal.classList.remove("open");
+});
+
+// Lightbox for renders
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+
+document.querySelectorAll(".renderItem img").forEach((img) => {
+  img.addEventListener("click", () => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add("open");
+  });
+});
+
+document.getElementById("lightboxClose").addEventListener("click", () => {
+  lightbox.classList.remove("open");
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) lightbox.classList.remove("open");
+});
+
+// Close any open modal on Escape
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    document.querySelectorAll(".modal-overlay.open").forEach((m) => m.classList.remove("open"));
+  }
+});
