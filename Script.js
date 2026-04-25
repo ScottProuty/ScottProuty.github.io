@@ -105,6 +105,18 @@ coloredTags.forEach((tag, index) => {
 slider.style.height = cardSections[0].scrollHeight + "px";
 window.addEventListener("resize", () => goToSlide(currentSlide));
 
+// On mobile: prevent scroll restoration and re-measure height after full load
+const isMobile = () => window.matchMedia("(max-width: 830px)").matches;
+if (isMobile() && history.scrollRestoration) history.scrollRestoration = "manual";
+window.addEventListener("load", () => {
+  slider.style.transition = "none";
+  slider.style.height = cardSections[0].scrollHeight + "px";
+  if (isMobile()) window.scrollTo(0, 0);
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    slider.style.transition = "";
+  }));
+});
+
 // Contact modal
 const contactModal = document.getElementById("contactModal");
 
