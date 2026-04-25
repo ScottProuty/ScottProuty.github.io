@@ -426,6 +426,21 @@ model-viewer {
     width: 100%;
   }
   .showcaseGrid {
-  grid-template-columns: auto;
+    grid-template-columns: auto;
+  }
+  #stickyNav li {
+    padding: 0 10px;
+  }
+  #buttonRow ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #buttonRow li {
+    float: none;
+    padding: 4px 10px;
+  }
+  #buttonRow li:last-child {
+    margin-left: 0;
   }
 }
